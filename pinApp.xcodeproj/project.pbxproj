@@ -13,6 +13,7 @@
 		BBFE2572254243A800F7E773 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBFE2570254243A800F7E773 /* Main.storyboard */; };
 		BBFE2574254243BF00F7E773 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBFE2573254243BF00F7E773 /* Assets.xcassets */; };
 		BBFE2577254243BF00F7E773 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBFE2575254243BF00F7E773 /* LaunchScreen.storyboard */; };
+		BBFE257F25425A2000F7E773 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFE257E25425A2000F7E773 /* LocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BBFE2573254243BF00F7E773 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBFE2576254243BF00F7E773 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBFE2578254243BF00F7E773 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBFE257E25425A2000F7E773 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				BBFE2573254243BF00F7E773 /* Assets.xcassets */,
 				BBFE2575254243BF00F7E773 /* LaunchScreen.storyboard */,
 				BBFE2578254243BF00F7E773 /* Info.plist */,
+				BBFE257E25425A2000F7E773 /* LocationViewController.swift */,
 			);
 			path = pinApp;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				BBFE256F254243A800F7E773 /* ViewController.swift in Sources */,
 				BBFE256B254243A800F7E773 /* AppDelegate.swift in Sources */,
 				BBFE256D254243A800F7E773 /* SceneDelegate.swift in Sources */,
+				BBFE257F25425A2000F7E773 /* LocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
