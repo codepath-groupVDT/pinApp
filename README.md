@@ -1,4 +1,4 @@
-* Original App Design Project - README Template
+Original App Design Project - README Template
 ===
 
 # Pin It!
@@ -85,8 +85,7 @@ Optional:
 
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="http://g.recordit.co/WsqurFTzL6.gif" width=600>
+<img src="http://g.recordit.co/mAsm0ixlQJ.gif" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
@@ -95,77 +94,8 @@ Optional:
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
-
-Model: Social View
-
-
-| Property | Type     | Description          |
-| -------- | -------- |:-------------------- |
-|          |          |                      
-| -------- | -------- | --------             |
-| objectId | String   | id for the user post
-|author    |Pointer to user|Image of author
-|caption   | String|Image caption by user
-|likesCount| Number|Number of likes for the post
-|commentsCount|Number|Number of comments
-|createdAt| DateTime|Date when post is created
-|map| File| Map that updates when user uploads
-
-Model: Pin it/Map view
-
-
-
-| Property | Type | Description |
-| -------- | -------- | -------- |
-| Pin it     | File     | Button that allows user to post     |
-|Search| File|Button that allows user to search different locations
-
-Model: Data
-
-| Property |Type| Description|
-| -------- | -------- | -------- |
-| image     | File     | Turns data from maps into infographics     |
-
-Model: Settings
-
-
-| Property | Type | Description |
-| -------- | -------- | -------- |
-| image     | File     | Displays user profile pic/avatar     |
-|editProfile|String| Allows user to edit profile
-|privacy|String|Shows privacy settings
-|notificatons|String|Shows user notification settings
-|about|String|Shows info about the app 
-|logOut|String|Allows user to logout
-
-
-
-
+[Add table of models]
 ### Networking
-
-* Social view
-    * (Read/Get) Query all posts where user is author
-    * (Create/Post) Create a new like
-    * (Delete) Delete existing like
-    * (Create/Post) Create a new comment on a post
-    * (Delete) Delete existing comment
-    * (Read/Get) Fetch map of uploaded user's pins
-    
-* Pin it
-    * (Create/Post) Create a new post object
-    * (Read/Get) Fetch pins from across the US
-
-* Data
-    * (Read/Get) Fetch pins and turn them into digestable inforgraphics for user
-
-* Settings
-    * (Read/Get) profile picture
-    * (Update/Put) edit profile
-
-
-
-
-
-
-    
-
+- [Add list of network requests by screen ]
+- [Create basic snippets for each Parse network request]
+- [OPTIONAL: List endpoints if using existing API such as Yelp]
