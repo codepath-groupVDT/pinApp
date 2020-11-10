@@ -28,10 +28,10 @@ App that lets you define a specific location as either Red(republican) or Blue(D
 
 **Required Must-have Stories**
 
-* Users need to beable to pin location as red or Blue
-* Users must Register and Login to the system
-* Visualize map with user defined pins (Red/Blue)
-* System must ask users to allow location services
+* Users need to beable to pin location as red or Blue [x]
+* Users must Register and Login to the system []
+* Visualize map with user defined pins (Red/Blue) []
+* System must ask users to allow location services []
 
 **Optional Nice-to-have Stories**
 
