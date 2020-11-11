@@ -28,27 +28,29 @@ class LoginViewController: UIViewController {
             if user != nil{
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }else{
-                    print("Error: \(error?.localizedDescription)")
+                print("Error: \( error?.localizedDescription ?? "no"))")
                 }
             }
     }
     
     @IBAction func onSignUp(_ sender: Any) {
+        
         let user = PFUser()
-               user.username = usernameField.text
-               user.password = passwordField.text
-               
-               user.signUpInBackground { (success,error) in
+        user.username = usernameField.text
+        user.password = passwordField.text
+        
+        user.signUpInBackground { (success,error) in
+            if success{
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            }else{
+                //print("Error: \(String(describing: error?.localizedDescription))")
+                print("no")
+                }
                    
-                   if success{
-                       self.performSegue(withIdentifier: "loginSegue", sender: nil)
-                   }else{
-                    print("Error: \(String(describing: error?.localizedDescription))")
-                   }
-                   
-               }
+            }
     }
     
+
     /*
     // MARK: - Navigation
 
