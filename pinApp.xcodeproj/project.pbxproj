@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		740609699CB52ADBE3E20947 /* Pods_pinApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E3893167D8DBC7961C4C5F /* Pods_pinApp.framework */; };
 		BB1AF85C255B4E68009F4E26 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1AF85B255B4E68009F4E26 /* LoginViewController.swift */; };
+		BB3480E22564F6F1002DC0D3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3480E12564F6F1002DC0D3 /* MapViewController.swift */; };
 		BBFE256B254243A800F7E773 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFE256A254243A800F7E773 /* AppDelegate.swift */; };
 		BBFE256D254243A800F7E773 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFE256C254243A800F7E773 /* SceneDelegate.swift */; };
 		BBFE256F254243A800F7E773 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFE256E254243A800F7E773 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 		65472FAC4EE0BD1E1CAF5FE1 /* Pods-pinApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pinApp.release.xcconfig"; path = "Target Support Files/Pods-pinApp/Pods-pinApp.release.xcconfig"; sourceTree = "<group>"; };
 		99A6B0A643A9977BFC55435C /* Pods-pinApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pinApp.debug.xcconfig"; path = "Target Support Files/Pods-pinApp/Pods-pinApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BB1AF85B255B4E68009F4E26 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BB3480E12564F6F1002DC0D3 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BBFE2567254243A800F7E773 /* pinApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pinApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBFE256A254243A800F7E773 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBFE256C254243A800F7E773 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				BBFE2578254243BF00F7E773 /* Info.plist */,
 				BBFE257E25425A2000F7E773 /* LocationViewController.swift */,
 				BB1AF85B255B4E68009F4E26 /* LoginViewController.swift */,
+				BB3480E12564F6F1002DC0D3 /* MapViewController.swift */,
 			);
 			path = pinApp;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBFE256F254243A800F7E773 /* ViewController.swift in Sources */,
+				BB3480E22564F6F1002DC0D3 /* MapViewController.swift in Sources */,
 				BBFE256B254243A800F7E773 /* AppDelegate.swift in Sources */,
 				BBFE256D254243A800F7E773 /* SceneDelegate.swift in Sources */,
 				BB1AF85C255B4E68009F4E26 /* LoginViewController.swift in Sources */,

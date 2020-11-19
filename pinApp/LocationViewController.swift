@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Parse
 
 class LocationViewController: UIViewController {
 
@@ -24,7 +25,7 @@ class LocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
+        //updateUI()
         
     }
     
@@ -33,12 +34,41 @@ class LocationViewController: UIViewController {
             // populate location labels with coordinate info
             longlabel.text = String(format: "%.8f", location.coordinate.longitude)
             latLabel.text = String(format: "%.8f", location.coordinate.latitude)
+            
         }else{
-            print("empty location")
+            print(type(of: location?.coordinate.latitude))
+            print(location?.coordinate.latitude as Any)
+        }
+    }
+    
+    
+    func sendData(color: String){
+        if let location = location{
+        
+            let pin = PFObject(className: "Pins")
+            
+            pin["username"] = PFUser.current()
+            pin["longitude"] = String(format: "%.8f", location.coordinate.longitude)
+            pin["latitude"] = String(format: "%.8f", location.coordinate.latitude)
+            pin["party"] = color
+        
+            // Saves the new object.
+            pin.saveInBackground {
+              (success: Bool, error: Error?) in
+              if (success) {
+                // The object has been saved.
+              } else {
+                // There was a problem, check error.description
+              }
+            }
+            
+        }else{
+            print("could not send")
         }
     }
     //Target/Action
     @IBAction func findLocationR(){
+        
         // Get user permission to use location service
         let authorizationStatus = CLLocationManager.authorizationStatus()
         
@@ -51,18 +81,53 @@ class LocationViewController: UIViewController {
             reportLocationServicesDeniedError()
             return
         }
+        
         //start/ stop finding location
         if isUpdatingLocation{
             stopLocationManager()
+            
+            
         }else{
             location = nil
             lastLocationError = nil
             startLocationManager()
         }
         
+        //defining the part color
+        
         updateUI()
+        sendData(color: "Red")
+    
+        
     }
     
+    @IBAction func findLocationB(_ sender: Any) {
+        // Get user permission to use location service
+               let authorizationStatus = CLLocationManager.authorizationStatus()
+               
+               if authorizationStatus == .notDetermined{
+                   locationManager.requestWhenInUseAuthorization()
+                   return
+               }
+               // report if permission is denied
+               if authorizationStatus == .denied || authorizationStatus == .restricted{
+                   reportLocationServicesDeniedError()
+                   return
+               }
+               //start/ stop finding location
+               if isUpdatingLocation{
+                   stopLocationManager()
+               }else{
+                   location = nil
+                   lastLocationError = nil
+                   startLocationManager()
+               }
+              
+
+        
+               updateUI()
+               sendData(color: "Blue")
+    }
     func startLocationManager(){
         if CLLocationManager.locationServicesEnabled(){
             locationManager.delegate = self
@@ -108,7 +173,7 @@ extension LocationViewController : CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location = locations.last!
-        print("GOT IT! LocationManager-didUpdateLocations: \(location)")
+        print("GOT IT! LocationManager-didUpdateLocations: \(String(describing: location))")
         stopLocationManager()
         updateUI()
     }
