@@ -22,6 +22,7 @@ class LocationViewController: UIViewController {
     var location: CLLocation?
     var isUpdatingLocation = false
     var lastLocationError: Error?
+    var color = "green"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,18 +37,28 @@ class LocationViewController: UIViewController {
             latLabel.text = String(format: "%.8f", location.coordinate.latitude)
             
         }else{
-            print(type(of: location?.coordinate.latitude))
-            print(location?.coordinate.latitude as Any)
+            longlabel.text = "Long"
+            latLabel.text = "Lat"
         }
     }
     
+    func showLocation(){
+        if let location = location{
+            // populate location labels with coordinate info
+            longlabel.text = String(format: "%.8f", location.coordinate.longitude)
+            latLabel.text = String(format: "%.8f", location.coordinate.latitude)
+            
+        }else{
+            print ("location not set")
+        }
+    }
     
     func sendData(color: String){
         if let location = location{
         
             let pin = PFObject(className: "Pins")
             
-            pin["username"] = PFUser.current()
+            //pin["username"] = PFUser.current()
             pin["longitude"] = String(format: "%.8f", location.coordinate.longitude)
             pin["latitude"] = String(format: "%.8f", location.coordinate.latitude)
             pin["party"] = color
@@ -58,7 +69,7 @@ class LocationViewController: UIViewController {
               if (success) {
                 // The object has been saved.
               } else {
-                // There was a problem, check error.description
+                print(error as Any)
               }
             }
             
@@ -94,11 +105,10 @@ class LocationViewController: UIViewController {
         }
         
         //defining the part color
-        
+        color = "Red"
         updateUI()
-        sendData(color: "Red")
-    
         
+       
     }
     
     @IBAction func findLocationB(_ sender: Any) {
@@ -126,7 +136,8 @@ class LocationViewController: UIViewController {
 
         
                updateUI()
-               sendData(color: "Blue")
+               color = "Blue"
+        
     }
     func startLocationManager(){
         if CLLocationManager.locationServicesEnabled(){
@@ -162,7 +173,7 @@ class LocationViewController: UIViewController {
 //learned this from a youtube video
 extension LocationViewController : CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("ERROR!! locationsManager-didFailWithError: \(error)")
+        //print("ERROR!! locationsManager-didFailWithError: \(error)")
         if (error as NSError).code == CLError.locationUnknown.rawValue{
             return
         }
@@ -176,5 +187,25 @@ extension LocationViewController : CLLocationManagerDelegate{
         print("GOT IT! LocationManager-didUpdateLocations: \(String(describing: location))")
         stopLocationManager()
         updateUI()
+        
+        
+        let pin = PFObject(className: "Pins")
+        
+        pin["username"] = PFUser.current()
+        pin["longitude"] = location?.coordinate.longitude
+        pin["latitude"] = location?.coordinate.latitude
+        pin["color"] = color
+ 
+    
+        // Saves the new object.
+        pin.saveInBackground {
+          (success: Bool, error: Error?) in
+          if (success) {
+            // The object has been saved.
+          } else {
+            print(error as Any)
+          }
+        }
+
     }
 }
