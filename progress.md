@@ -9,4 +9,4 @@ users can signup and sign in taking them to their current page the next step is 
 
 # Week 3
 Login Page is customized and the message asking user to use location is added. The data us also sent to the back4app backend.
-<img src='https://recordit.co/4aj2CBkSMp' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://recordit.co/4aj2CBkSMp.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
