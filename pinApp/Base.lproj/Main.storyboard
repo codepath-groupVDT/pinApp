@@ -79,6 +79,24 @@
             </objects>
             <point key="canvasLocation" x="-688.40579710144937" y="90.401785714285708"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="IFN-wy-ZVZ">
+            <objects>
+                <tabBarController id="IvR-fn-VK8" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5FI-B2-G88">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Q9N-uz-ids" kind="relationship" relationship="viewControllers" id="W30-d9-6M9"/>
+                        <segue destination="bmD-Jy-LIs" kind="relationship" relationship="viewControllers" id="jlO-gj-ev5"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tOt-YP-czZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1590" y="-629"/>
+        </scene>
         <!--pin-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -269,10 +287,11 @@
             </objects>
             <point key="canvasLocation" x="4071.0144927536235" y="89.732142857142847"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Location-->
         <scene sceneID="RjJ-98-qUc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="Q9N-uz-ids" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Location" image="mappin.and.ellipse" catalog="system" id="djm-5q-DqF"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RPJ-nk-sVI">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -287,10 +306,11 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="91.741071428571431"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--About-->
         <scene sceneID="IVR-3O-bwL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bmD-Jy-LIs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="About" image="info.circle" catalog="system" id="NRl-p3-A9C"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4rE-sA-2Zf">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -303,10 +323,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T9S-Qx-u56" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3160.8695652173915" y="89.732142857142847"/>
+            <point key="canvasLocation" x="3117" y="90"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="W30-d9-6M9"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="pin It" width="300" height="200"/>
         <systemColor name="linkColor">
